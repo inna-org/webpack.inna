@@ -1,0 +1,28 @@
+//Step one to two
+add module
+
+  {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loader: 'babel'
+  },
+  {
+    test: /\.css$/,
+    loader: 'style!css?modules'
+  }
+
+//Step two to three
+  var webpack = require('webpack');
+  var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+  postcss: [
+      require('autoprefixer')
+    ],
+
+  plugins: [
+      new HtmlWebpackPlugin({
+        template: __dirname + "/app/index.tmpl.html"
+      }),
+      new webpack.HotModuleReplacementPlugin()
+    ],
+

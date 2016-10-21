@@ -1,0 +1,25 @@
+mkdir sample-project
+cd sample-project
+npm init
+npm i webpack --save-dev
+node_modules/.bin/webpack
+
+
+
+npm i babel-core babel-loader babel-preset-es2015 --save-dev
+
+npm i webpack webpack-dev-server --save-dev
+
+"scripts": {
+  "build": "webpack"
+},
+
+npm i eslint eslint-loader --save-dev
+? do I need eslint-loader or does eslint install it?
+
+add entry to webpack.config existing module section
+module: {
+    preLoaders: [
+      {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}
+    ]
+  }
